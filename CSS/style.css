@@ -1,12 +1,20 @@
-/* ==========================================
-   1. QUY TẮC CHUNG (GLOBAL STYLES)
-   ========================================== */
 *, *::before, *::after {
     box-sizing: border-box;
 }
-body{
-    font-family:'Montserrat', sans-serif;
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
 }
+
+/* Đảm bảo các container có độ rộng hợp lý và không bị dính sát mép màn hình */
+.header-container, nav, .banner, .column, footer {
+    padding-inline: 20px;
+    max-width: 1200px;
+    margin-inline: auto;
+}
+
 header {
     background-color: #ffffff;
     padding: 0;
@@ -18,7 +26,7 @@ header {
     align-items: center;
     padding-top: 15px;
     padding-bottom: 15px;
-    border-bottom: 1.5px solid #cbcbcb; /* Đường gạch ngang mảnh phân cách hàng trên & hàng dưới */
+    border-bottom: 1.5px solid #cbcbcb;
 }
 
 /* Logo */
@@ -26,10 +34,11 @@ header {
     height: 45px;
     width: auto;
 }
+
 .header-right {
     display: flex;
     align-items: center;
-    gap: 30px; /* Khoảng cách giữa nút đen và cụm số điện thoại */
+    gap: 30px;
 }
 
 /* "Trouver mon vélo" */
@@ -41,11 +50,12 @@ header {
     text-decoration: none;
     font-weight: 600;
     font-size: 18px;
+    white-space: nowrap;
 }
 
 .header-right a:hover {
     text-decoration: underline;
-    color: #0b7a3e ;
+    color: #0b7a3e;
 }
 
 .contact-box {
@@ -64,13 +74,16 @@ header {
 .phone {
     font-size: 20px;
     font-weight: 700;
-    color: #0b7a3e; /* Màu xanh lá đậm chuẩn doanh nghiệp */
+    color: #0b7a3e; 
     letter-spacing: 0.5px;
+    white-space: nowrap;
 }
+
 nav {
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
 }
+
 nav ul {
     display: flex;
     justify-content: space-between;
@@ -81,6 +94,7 @@ nav ul {
     margin: 0;
     padding: 0px;
 }
+
 nav a {
     color: black;
     text-decoration: none;
@@ -89,43 +103,45 @@ nav a {
     padding: 6px 0;
     position: relative;
 }
+
 nav a:hover {
     color: #0b7a3e;
     text-decoration: underline;
 }
-nav a[href="index.html"] {
-    color: #0b7a3e;
-    border-bottom: 2px solid #0b7a3e;
-}
+
+nav a[href="index.html"],
 nav a[href="produits.html"] {
     color: #0b7a3e;
     border-bottom: 2px solid #0b7a3e;
 }
+
 .banner {
     background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
     url('/ASSET/Cycliste-hometrainer.webp') center 28%/cover no-repeat;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 16px;
     width: 100%;
-    margin-inline: auto;
     min-height: 320px;
-    padding-top: 35px; 
+    padding: 40px 20px;
+    text-align: center;
 }
+
 .banner h1 {
     margin: 0;
     color: #ffffff;
     font-size: 55px;
     font-weight: 900;
-    line-height: 1;
-   
+    line-height: 1.1;
 }
+
 .banner h1 .highlight {
     color: #A2E4B8;
-    white-space: nowrap; /* Giữ cụm JUSQU'À 70% dính liền không bị rớt dòng */
+    white-space: nowrap;
 }
+
 .banner p {
     color: #ffffff;
     text-align: center;
@@ -134,6 +150,7 @@ nav a[href="produits.html"] {
     opacity: 0.85;
     max-width: 900px;
 }
+
 .column {
     display: flex;
     gap: 30px;
@@ -142,26 +159,118 @@ nav a[href="produits.html"] {
     padding-bottom: 1.5rem;
 }
 
-footer{
+footer {
     background-color: #000000;
     color: #0b7a3e;
     display: flex;
     justify-content: space-around;
+    padding: 40px 20px;
+    flex-wrap: wrap;    
+    gap: 30px;
 }
+
 footer a {
     color: #ffffff;
     text-decoration: none;
-    
 }
+
+footer ul {
+    padding: 0;
+    margin: 0;
+}
+
 footer ul li {
     list-style: none;
+    margin-bottom: 8px;
 }
-footer a:hover{
+
+footer a:hover {
     color: #0b7a3e;
     text-decoration: underline;
 }
-.footer-container ul {
-    padding: 0;
-    
+
+
+/* TABLET */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .header-right {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .contact-box {
+        align-items: center;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px 25px;
+    }
+
+    .banner h1 {
+        font-size: 38px;
+    }
+
+    .banner p {
+        font-size: 16px;
+    }
+
+    .column {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
 }
 
+
+/* telephone */
+@media (max-width: 480px) {
+    .header-container img {
+        height: 35px;
+    }
+
+    .header-right a {
+        font-size: 16px;
+        padding: 10px 18px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .phone {
+        font-size: 18px;
+    }
+
+    .conseil {
+        font-size: 14px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .banner {
+        min-height: 260px;
+        padding: 30px 15px;
+    }
+
+    .banner h1 {
+        font-size: 28px;
+    }
+
+    .banner p {
+        font-size: 14px;
+    }
+}
