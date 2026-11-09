@@ -8,7 +8,7 @@ body {
     padding: 0;
 }
 
-/* Đảm bảo các container có độ rộng hợp lý và không bị dính sát mép màn hình */
+/* width can bang */
 .header-container, nav, .banner, .column, footer {
     padding-inline: 20px;
     max-width: 1200px;
@@ -159,20 +159,6 @@ nav a[href="produits.html"] {
     padding-bottom: 1.5rem;
 }
 
-footer {
-    background-color: #000000;
-    color: #0b7a3e;
-    display: flex;
-    justify-content: space-around;
-    padding: 40px 20px;
-    flex-wrap: wrap;    
-    gap: 30px;
-}
-
-footer a {
-    color: #ffffff;
-    text-decoration: none;
-}
 
 footer ul {
     padding: 0;
@@ -274,3 +260,1263 @@ footer a:hover {
         font-size: 14px;
     }
 }
+/* ==========================================
+2. CONTENU PRINCIPAL CONTRIBUTION CSS DE CHRIS
+   ========================================== */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+}
+
+main section {
+    margin-bottom: 50px;
+}
+
+main img {
+    display: block;
+    width: 100%;
+}
+
+main figure {
+    margin: 0; /* le navigateur met 40px par défaut */
+}
+
+main a {
+    color: inherit;
+    text-decoration: none;
+}
+
+main a:hover {
+    text-decoration: underline;
+}
+
+/* Titres avec petit trait vert */
+main h2 {
+    position: relative;
+    font-size: 1.6rem;
+    color: #111;
+    margin: 0 0 20px;
+    padding-bottom: 12px;
+}
+
+main h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 4px;
+    background-color: var(--vert);
+}
+
+main h3 {
+    font-size: 1.05rem;
+    line-height: 1.3;
+    color: #111;
+    margin: 8px 0;
+}
+
+main time,
+.lieu {
+    color: var(--gris);
+    font-size: 0.9rem;
+}
+
+.lieu {
+    margin: 0;
+}
+
+/* Titre de section + bouton à droite */
+.titre-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.titre-section h2 {
+    margin-bottom: 0;
+}
+
+/* Bouton (tu peux renommer la classe en .bouton-vert) */
+.bouton-lime {
+    display: inline-block;
+    background-color: var(--vert-clair);
+    color: #111;
+    font-weight: 700;
+    font-size: 0.95rem;
+    padding: 10px 22px;
+    border-radius: 25px;
+}
+
+.bouton-lime:hover {
+    background-color: var(--vert);
+    color: #0b7a3e;
+    text-decoration: none;
+}
+
+/* Étiquette (ARTICLE, VTT, ROUTE) */
+.etiquette {
+    display: inline-block;
+    border: 2px solid var(--vert);
+    color: var(--vert);
+    border-radius: 6px;
+    padding: 1px 8px;
+    margin-top: 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* ---------- Présentation : carte + magasins + clubs ---------- */
+.presentation {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.carte-france figcaption {
+    text-align: center;
+    color: var(--gris);
+    margin-top: 10px;
+}
+
+.vignettes {
+    list-style: none;
+    margin: 0 0 40px;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.vignettes img {
+    border: 1px solid #111;
+    padding: 6px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+.lien-fleche {
+    display: block;
+    text-align: right;
+    font-weight: 600;
+}
+.lien-fleche a:hover {
+    color: #0b7a3e;
+
+}
+/* ---------- Articles ---------- */
+.articles-une {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 30px;
+}
+
+.article-carte a,
+.evenement-carte a {
+    display: block;
+}
+
+.article-carte img {
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.articles-liste {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.article-compact {
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+.article-compact img {
+    width: 160px;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+/* ---------- Événements ---------- */
+.evenements-liste {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.evenement-carte figure {
+    position: relative;
+}
+
+.evenement-carte img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.date-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: var(--vert);
+    color: #fff;
+    border-radius: 8px;
+    padding: 6px 12px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.8rem;
+    line-height: 1.1;
+}
+
+.date-badge strong {
+    display: block;
+    font-size: 1.6rem;
+}
+
+/* ---------- Actualité + Emploi ---------- */
+.deux-colonnes {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.liste-date {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.liste-date li {
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.liste-date time {
+    background-color: var(--vert-pale);
+    color: var(--vert);
+    border-radius: 6px;
+    padding: 0 8px;
+    font-weight: 700;
+    height: fit-content;
+}
+
+/* ==========================================
+   PAGE PRODUITS
+   ========================================== */
+.produits {
+    padding-top: 30px;
+}
+
+/* On annule le trait vert des h2 du main (règle commune) */
+.produits h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    letter-spacing: -0.02em;
+    margin: 0;
+    padding-bottom: 0;
+}
+
+.produits h2::after {
+    content: none;
+}
+
+.produits section > h2 {
+    margin-bottom: 25px;
+}
+
+/* Texte masqué visuellement mais lu par les lecteurs d'écran */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.produits .surtitre {
+    margin: 0 0 10px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.surtitre.vert  { color: var(--vert); }
+.surtitre.clair { color: #fff; }
+
+.titre-ligne {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.produits .sous-titre {
+    margin: 8px 0 0;
+    color: var(--gris);
+}
+
+.lien-souligne {
+    font-weight: 600;
+    border-bottom: 2px solid #111;
+    padding-bottom: 2px;
+}
+
+/* ---------- Boutons ---------- */
+.bouton-vert {
+    display: inline-block;
+    background-color: var(--vert-clair);
+    color: #0f3d26;
+    font-weight: 700;
+    padding: 14px 28px;
+    border-radius: 30px;
+}
+
+.bouton-vert:hover {
+    background-color: var(--vert);
+    color: #fff;
+    text-decoration: none;
+}
+
+.actions-doubles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.bouton-noir,
+.bouton-contour {
+    display: block;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 20px;
+    border: 1px solid #111;
+    border-radius: 10px;
+}
+
+.bouton-noir {
+    background-color: #000;
+    color: #fff;
+}
+
+.bouton-contour {
+    background-color: #fff;
+    color: #111;
+}
+
+.bouton-noir:hover,
+.bouton-contour:hover {
+    background-color: var(--vert);
+    border-color: var(--vert);
+    color: #fff;
+    text-decoration: none;
+}
+
+/* ---------- 1. Bandeau d'avantages ---------- */
+.avantages {
+    background-color: var(--vert-clair);
+    border-radius: 20px;
+    padding: 25px 30px;
+}
+
+.avantages ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.avantages li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: #0f3d26;
+}
+
+.pastille {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: #fff;
+    display: grid;
+    place-items: center;
+    font-weight: 700;
+}
+
+.avantages strong {
+    display: block;
+}
+
+.avantages div span {
+    font-size: 0.85rem;
+}
+
+/* ---------- 2. Cartes de vélos ---------- */
+.grille-velos {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.velo {
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.velo:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.velo > a {
+    display: block;
+}
+
+.velo-image {
+    position: relative;
+}
+
+.velo-image img {
+    aspect-ratio: 4 / 3;
+    object-fit: contain;
+}
+
+.badge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 4px 8px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.badge-noir  { background-color: #000; color: #fff; }
+.badge-jaune { background-color: var(--jaune); color: #111; }
+
+.velo-infos {
+    padding: 16px;
+}
+
+.produits .velo-infos h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+}
+
+.modele {
+    margin: 2px 0 14px;
+}
+
+.specs {
+    list-style: none;
+    margin: 0 0 16px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 14px;
+    font-size: 0.8rem;
+}
+
+.prix-bloc {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px 12px;
+}
+
+.prix {
+    display: flex;
+    margin: 0;
+    border: 2px solid #000;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.montant {
+    padding: 4px 10px;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
+
+.remise {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+    background-color: #000;
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.ancien {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-size: 0.7rem;
+    color: var(--gris);
+}
+
+.ancien del {
+    font-size: 0.85rem;
+}
+
+.economie {
+    display: inline-block;
+    margin: 12px 0 6px;
+    padding: 4px 8px;
+    background-color: var(--jaune);
+    font-style: italic;
+    font-weight: 700;
+}
+
+.mensualite {
+    margin: 0;
+    color: var(--gris);
+}
+
+/* ---------- 3. Vélos par usage ---------- */
+.usages-liste {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+}
+
+.usages-liste a {
+    position: relative;
+    display: block;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.usages-liste img {
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+}
+
+.usages-liste a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent 50%, rgba(0, 0, 0, 0.7));
+}
+
+.usages-liste span {
+    position: absolute;
+    left: 18px;
+    bottom: 16px;
+    z-index: 1;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+/* ---------- 4. Marques ---------- */
+.marques-liste {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px 30px;
+}
+
+.marques-liste li {
+    font-size: 1.4rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+/* ---------- 5. Vendre mon vélo ---------- */
+.vendre {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+    background-color: var(--gris-fond);
+    border-radius: 20px;
+    padding: 40px 60px;
+}
+
+.vendre img {
+    max-width: 420px;
+    margin-left: auto;
+}
+
+.coches {
+    list-style: none;
+    margin: 20px 0 25px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.coches li::before {
+    content: "✓";
+    margin-right: 8px;
+}
+
+/* ---------- 6. Garantie ---------- */
+.garantie .intro {
+    max-width: 700px;
+    margin: 15px 0 30px;
+}
+
+.garantie-grille {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.carte-ateliers {
+    position: relative;
+}
+
+.carte-ateliers img {
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+    border-radius: 18px;
+}
+
+.recherche-atelier {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px;
+    background-color: #fff;
+    border-radius: 40px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+}
+
+.recherche-atelier input {
+    width: 130px;
+    padding: 10px 14px;
+    border: none;
+    font-family: inherit;
+    font-size: 1rem;
+}
+
+.recherche-atelier button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 30px;
+    background-color: var(--vert-fonce);
+    color: #fff;
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.credit {
+    margin: 10px 0 0;
+    font-size: 0.75rem;
+    color: var(--gris);
+}
+
+.chiffres {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.chiffres li {
+    padding: 18px 0;
+    border-top: 1px solid #ddd;
+}
+
+.chiffres strong {
+    display: block;
+    font-size: 2.6rem;
+    line-height: 1;
+}
+
+.chiffres span {
+    font-size: 0.9rem;
+}
+
+.etapes {
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 0;
+    counter-reset: etape;
+}
+
+.etapes li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    counter-increment: etape;
+    font-size: 0.95rem;
+}
+
+.etapes li::before {
+    content: counter(etape);
+    flex-shrink: 0;
+    width: 28px;
+    height: 28px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background-color: #000;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+/* ---------- 7. Équipe (carte sombre sur photo) ---------- */
+.equipe {
+    background:
+        linear-gradient(90deg, rgba(8, 28, 20, 0.95) 35%, rgba(8, 28, 20, 0.35)),
+        url('../images/equipe.jpg') center / cover no-repeat;
+    color: #fff;
+    border-radius: 20px;
+    padding: 50px 60px;
+}
+
+.equipe-texte {
+    max-width: 700px;
+}
+
+.produits .equipe h2 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.equipe blockquote {
+    margin: 25px 0;
+    color: var(--vert-clair);
+    font-weight: 700;
+}
+
+.equipe blockquote p {
+    margin: 0 0 4px;
+}
+
+.equipe .auteur {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.equipe-chiffres {
+    list-style: none;
+    margin: 30px 0 0;
+    padding: 25px 0 0;
+    display: flex;
+    border-top: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.equipe-chiffres li {
+    padding: 0 25px;
+    border-left: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.equipe-chiffres li:first-child {
+    padding-left: 0;
+    border-left: none;
+}
+
+.equipe-chiffres strong {
+    display: block;
+    font-size: 2rem;
+}
+
+.equipe-chiffres span {
+    font-size: 0.85rem;
+}
+
+/* ---------- 8. Accordéon + carte contact ---------- */
+.conseils {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.accordeon details {
+    padding: 18px 0;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.accordeon summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+
+.accordeon summary::-webkit-details-marker {
+    display: none;
+}
+
+.accordeon summary::after {
+    content: "⌃";
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    transform: rotate(180deg);
+}
+
+.accordeon details[open] summary::after {
+    transform: none;
+}
+
+.accordeon p {
+    margin: 15px 0 0;
+}
+
+.accordeon .bouton-vert {
+    margin-top: 30px;
+}
+
+.carte-contact {
+    position: sticky;
+    top: 20px;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.carte-contact img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.carte-contact-texte {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 60px 22px 22px;
+    color: #fff;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+}
+
+.carte-contact-texte p {
+    margin: 0;
+}
+
+.carte-titre {
+    font-size: 1.3rem;
+    font-weight: 700;
+}
+
+/* ---------- 9. Recherches ---------- */
+.pastilles {
+    list-style: none;
+    margin: 20px 0 30px;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.pastilles a {
+    display: block;
+    padding: 10px 24px;
+    border: 1px solid var(--vert-clair);
+    border-radius: 30px;
+}
+
+.pastilles a:hover {
+    background-color: var(--vert-pale);
+    text-decoration: none;
+}
+
+.liens-colonnes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.produits .liens-colonnes h3 {
+    margin: 0 0 20px;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gris);
+}
+
+.liens-colonnes ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.liens-colonnes li {
+    margin-bottom: 16px;
+}
+
+/* ==========================================
+   FOOTER DE LA PAGE PRODUITS
+   ========================================== */
+footer.pied-mint {
+    display: block; /* annule le flex du footer de l'accueil */
+    background-color: #000;
+    color: #fff !important;
+    text-decoration: none;
+    padding: 50px 0 0;
+    overflow: hidden;
+}
+
+footer.pied-mint a {
+    color: #fff;
+}
+
+.pied-contenu {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.pied-mint ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pied-mint .paiements {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.paiements li {
+    margin: 0;
+    padding: 0;
+    border-radius: 6px;
+    overflow: hidden; /* arrondit aussi l'image à l'intérieur */
+}
+
+.paiements img{
+    display: block;
+    height: 30px;
+    width: auto; /* garde les proportions du logo */
+}
+
+.pied-colonnes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px 30px;
+}
+
+.pied-mint h2 {
+    margin: 0 0 20px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    color: var(--vert-clair);
+}
+
+.pied-mint li {
+    margin-bottom: 14px;
+    font-size: 0.9rem;
+}
+
+.pied-mint address {
+    font-size: 0.9rem;
+    font-style: normal;
+    line-height: 2;
+}
+
+.pied-mint a:hover {
+    color: #0b7a3e;
+}
+
+.avis {
+    margin: 50px 0 30px;
+    text-align: center;
+}
+
+.avis p {
+    margin: 0;
+}
+
+.avis-marque {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.etoiles {
+    display: inline-block;
+    margin: 8px 0;
+    padding: 4px 10px;
+    background-color: var(--vert);
+    letter-spacing: 4px;
+}
+
+.copyright {
+    margin: 0 0 20px;
+    font-size: 0.8rem;
+}
+
+.suivez-nous {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 22px 0;
+    border-top: 1px solid #2a2a2a;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.suivez-nous p {
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.pied-mint .reseaux {
+    display: flex;
+    gap: 20px;
+}
+
+.pied-mint .reseaux li {
+    margin: 0;
+}
+
+.pied-liens {
+    margin: 0;
+    padding: 25px 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.filigrane {
+    height: 0.62em; /* coupe le bas des lettres */
+    margin: 30px 0 0;
+    overflow: hidden;
+    font-size: clamp(5rem, 22vw, 18rem);
+    font-weight: 900;
+    line-height: 1;
+    text-align: center;
+    color: #13241b;
+    user-select: none;
+}
+
+/* Conteneur de la carte */
+.zone-carte {
+    position: relative; /* les repères se placent par rapport à lui */
+}
+
+.zone-carte > img {
+    border-radius: 20px;
+}
+
+/* Repère sur la carte */
+.repere {
+    position: absolute; /* left et top sont donnés dans le HTML */
+    /* transform: translate(-50%, -100%); pour centrer horizontalemnt */
+}
+
+.marqueur {
+    width: 22px;
+    height: 22px;
+    border: 2px solid var(--vert-fonce);
+    border-radius: 8px;
+    background-color: var(--vert-clair);
+    color: var(--vert-fonce);
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+/* L'infobulle */
+.popup-atelier {
+    display: none; /* cachée par défaut */
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 50%;
+    transform: translateX(-50%); /* centrée sous le repère */
+    z-index: 5;
+    width: min(320px, 80vw);
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.repere.ouvert .popup-atelier {
+    display: block;
+}
+
+/* La petite flèche en haut : un carré tourné à 45° */
+.popup-atelier::before {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    transform: translateX(-50%) rotate(45deg);
+}
+
+.popup-atelier h3 {
+    margin: 0 0 6px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.adresse {
+    margin: 0;
+    color: #444;
+}
+
+.popup-fermer {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    line-height: 1;
+    color: var(--gris);
+    cursor: pointer;
+}
+
+/* Horaires */
+.horaires {
+    list-style: none;
+    margin: 14px 0 0;
+    padding: 14px 0 0;
+    border-top: 1px solid #e5e7eb;
+}
+
+.horaires li {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.horaires .aujourdhui {
+    font-weight: 700;
+    color: #111;
+}
+
+/* Zoom */
+.zoom {
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+}
+
+.zoom button {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background-color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.zoom button + button {
+    border-top: 1px solid #e5e7eb;
+}
+
+/* ==========================================
+3. RESPONSIVE (toujours à la fin du fichier)
+   ========================================== */
+@media (max-width: 1000px) {
+    .articles-une,
+    .articles-liste,
+    .evenements-liste {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .presentation,
+    .articles-une,
+    .articles-liste,
+    .evenements-liste,
+    .deux-colonnes {
+        grid-template-columns: 1fr;
+    }
+
+    .article-compact img {
+        width: 120px;
+    }
+
+    .column {
+        flex-direction: column;
+    } 
+
+    /* Optionnel : en-tête et menu qui ne débordent pas sur téléphone */
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .header-right {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px 20px;
+    }
+} 
